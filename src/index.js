@@ -14,7 +14,10 @@ import './index.css';
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={AppContainer}>
+      <Route path="/">
+      	<IndexRoute component={AppContainer}/>
+      	<Route path="menu" component={MenuContainer} />
+      	<Route path="plate" component={PlateContainer} />
       </Route>
     </Router>
   </Provider>,

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+//import {Link} from 'react-router'
+//import addItemToPlate from '../action-creators/plate'
+
 
 //todo: render a list of menu items + buttons to add them to your plate
 
@@ -9,12 +12,14 @@ export default class Menu extends Component {
       <div>
         <h3>Menu</h3>
         <ul>
-          <li>
-            <button>There should be some menu items here</button>
-          </li>
-           <li>
-            <button>There's some dummy data you can put on the state in items.js</button>
-          </li>
+        {
+          this.props.menu.map(item => (
+            <li key={item.id}>
+              <button onClick={() => this.props.addItem(item)}>{item.name}</button>
+            </li>
+          ))
+          
+        }
         </ul>
       </div>
     );

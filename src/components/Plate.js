@@ -5,12 +5,18 @@ import React, { Component } from 'react';
 export default class Plate extends Component {
 
   render () {
+    console.log('plate: ', this.props.plate)
     return (
       <div>
         <h3>Plate</h3>
         <ul>
-          <li>Example item</li>
-          <li>You should delete this</li>
+          {
+          this.props.plate.map(item => (
+            <li>
+              <button>{item.name}</button>
+            </li>
+          )) 
+        }
         </ul>
       </div>
     );
